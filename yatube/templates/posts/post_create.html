@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} {% if is_edit %} Редактировать запись {% else %} Добавить запись {% endif %} {% endblock %}
+{% block header %} {% if is_edit %} Редактировать запись {% else %} Добавить запись {% endif %} {% endblock %}
+
+{% block content %}
+
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8 p-5">
+            <div class="card">
+
+                <form action="{% if is_edit %} {% url 'posts:post_edit' post_id %} {% else %} {% url 'posts:post_create' %} {% endif %}" method="post" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <button type="submit" class="btn btn-primary btn-block">{% if is_edit %}Сохранить{% else %}Добавить запись{% endif %}</button>
+                </form>
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+{% endblock %}

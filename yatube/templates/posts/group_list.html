@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{  group.title  }}
+{% endblock title %}
+
+{% block content %}
+      <div class="container py-5">        
+        <h1>{{  group.title  }}</h1>
+        <p>{{  group.description  }}</p>
+        <!-- все посты перебираются в цикле -->
+        {% for post in page_obj %}
+            {% include "includes/post_item.html" with post=post %}
+        {% endfor %}
+        <!-- нет черты после последнего поста -->
+        <!-- если записей больше 10 -- подключён паджинатор -->
+        {% if page_obj.has_other_pages %}
+            {% include "includes/paginator.html" with page_obj=page_obj paginator=paginator%}
+        {% endif %}
+      </div>
+      
+{% endblock content %}
