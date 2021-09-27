@@ -12,7 +12,3 @@ urlpatterns = [
     path('posts/<int:post_id>/', views.post_detail, name='post_detail'),
     path("posts/<int:post_id>/edit/", views.post_edit, name="post_edit"),
 ]
-
-# path("<str:username>/<int:post_id>/edit/", views.post_edit, name="post_edit"),
-# path('<str:username>/<int:post_id>/', views.post_detail, name='post_detail'),
-# path('gropup_list/', include('posts.urls', namespace='posts')),

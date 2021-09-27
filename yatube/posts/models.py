@@ -4,9 +4,15 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     text = models.TextField(verbose_name='Текст статьи')
-    pub_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts', verbose_name='Автор статьи')
-    group = models.ForeignKey('Group', blank=True, null=True, on_delete=models.SET_NULL, related_name='posts', verbose_name='Группа статей')
+    pub_date = models.DateTimeField(auto_now_add=True,
+                                    verbose_name='Дата публикации')
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name='posts',
+                               verbose_name='Автор статьи')
+    group = models.ForeignKey('Group', blank=True, null=True,
+                              on_delete=models.SET_NULL,
+                              related_name='posts',
+                              verbose_name='Группа статей')
 
     class Meta:
         verbose_name = 'Статья'
