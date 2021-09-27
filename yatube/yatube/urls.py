@@ -1,4 +1,3 @@
-from django.conf import settings
 # anfisa/urls.py (главный файл url проекта)
 # По умолчанию в проект Django подключена система администрирования
 from django.contrib import admin
