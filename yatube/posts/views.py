@@ -1,10 +1,10 @@
 from django.conf import settings
-from django.core.paginator import Paginator
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import get_user_model
-from posts.models import Post, Group
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404, redirect, render
 from posts.forms import PostForm
+from posts.models import Group, Post
 
 User = get_user_model()
 
@@ -65,7 +65,6 @@ def post_create(request):
         return render(request, 'posts/post_create.html', {'form': form})
 
     if not form.is_valid():
-        form = PostForm(data=request.POST)
         return render(request, 'posts/post_create.html', {'form': form})
 
     post = form.save(commit=False)
