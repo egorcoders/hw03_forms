@@ -1,8 +1,4 @@
-# anfisa/urls.py (главный файл url проекта)
-# По умолчанию в проект Django подключена система администрирования
 from django.contrib import admin
-# Функция include позволит использовать path() из других файлов.
-# Импортируем!
 from django.urls import include, path
 
 urlpatterns = [
