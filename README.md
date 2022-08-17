@@ -64,7 +64,7 @@ git clone https://github.com/egorcoders/hw03_forms.git
 Перейти в папку с проектом:
 
 ```python
-cd hw02_community/
+cd hw03_forms/
 ```
 
 Установить виртуальное окружение для проекта:
