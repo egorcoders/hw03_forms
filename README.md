@@ -59,7 +59,7 @@
 Клонировать репозиторий:
 
 ```python
-git clone https://github.com/egorcoders/hw02_community.git
+git clone https://github.com/egorcoders/hw03_forms.git
 ```
 
 Перейти в папку с проектом:
